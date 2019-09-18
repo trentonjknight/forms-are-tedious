@@ -13,19 +13,19 @@
 
 <body>
 
-<div class="card text-left">
+
+<div class="container">
+
+    <div class="card text-left">
     <div class="card-header">
     <h2><b>Payment Form Example</b></h2>
   </div>
 
-  <div class="card-body">
+<div class="card-body">
 
     <div class="alert alert-danger" role="alert">
   Some fields are missing
     </div>
-
-    <div class="container">
-
     <!--first row-->
     <form>
     <div class="form-row">
@@ -86,9 +86,12 @@
 
 <!--fourth row-->
 
-    <div class="form-row">
+<div class="form-row">
 
-    <div class="radio col-8">
+
+    <div class="radio col-6">
+    <div>We accept:</div>
+<div class="badge badge-secondary mt-3" style="padding:10px">
             <div>
                 <div class="form-check form-check-inline">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -107,9 +110,11 @@
                 <label class="form-check-label" for="inlineCheckbox2"><i class="fab fa-cc-amex"></i></label>
             </div>
     </div>
-                </div>
 
-    <div class="form-group col-4">
+                </div>
+</div>
+
+    <div class="form-group col-6">
             <label for="inputlastname">Message</label>
             <textarea name ="" class="form-control" id="inputlastname"></textarea>
             <small id="passwordHelpBlock" class="form-text text-muted">
@@ -120,14 +125,13 @@
   </div>
 
 
-</div>
+    <div class="card-footer">
+        <input type="submit" class="btn btn-primary float-right" value="Send"/>
+        <input type="submit" class="btn btn-secondary float-right" value="Cancel"/>
+    </div>
 
+    </div>
 
-</div>
-
-<div class="card-footer-right">
-    <a href="#" class="btn btn-secondary">Cancel</a>
-    <a href="#" class="btn btn-primary">Send</a>
 </div>
 
 </form>
