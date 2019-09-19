@@ -29,28 +29,38 @@
 
     <!--first row-->
 
-    <form action="https://formspree.io/email@domain.tld" method="POST">
+    <form class="needs-validation" action="https://formspree.io/email@domain.tld" method="POST" novalidate>
+
     <div class="form-row">
 
         <div class="form-group col-5">
-        <label for="inputEmail4">Card #</label>
-        <input type="number" class="form-control" id="inputEmail4" placeholder="xxxxxxxxxxxxx">
+        <label for="validationCustom01">Card #</label>
+        <input type="number" class="form-control" id="validationCustom01" placeholder="XXXXXXXXXXXXXXXX" required>
+        <div class="valid-feedback">
+        Looks good!
+        </div>
         </div>
 
         <div class="form-group col">
-        <label for="inputPassword4">CVC</label>
-        <input type="number" class="form-control" id="inputPassword4" placeholder="0000">
+        <label for="validationCustom02">CVC</label>
+        <input type="number" class="form-control" id="validationCustom02" placeholder="0000" required>
+        <div class="valid-feedback">
+        Looks good!
+      </div>
         </div>
 
         <div class="form-group col">
-
-      <label for="validationCustomAmount">Amount</label>
+      <label for="validationCustom03">Amount</label>
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroupPrepend">$</span>
         </div>
-        <input type="number" class="form-control" id="inputamount" placeholder="Amount">
+        <input type="number" class="form-control" id="validationCustom03" placeholder="Amount" required>
+        <div class="valid-feedback">
+        Looks good!
+      </div>
     </div>
+
         </div>
     </div>
 
@@ -58,13 +68,19 @@
     <div class="form-row">
 
         <div class="form-group col-6">
-            <label for="inputfirstname">First Name</label>
-            <input type="text" class="form-control" id="inputfirstname">
+            <label for="validationCustom04">First Name</label>
+            <input type="text" class="form-control" id="validationCustom04"placeholder="First Name" required>
+            <div class="valid-feedback">
+        Looks good!
+      </div>
         </div>
 
         <div class="form-group col-6">
-            <label for="inputlastname">Last Name</label>
-            <input type="text" class="form-control" id="inputlastname">
+            <label for="validationCustom05">Last Name</label>
+            <input type="text" class="form-control" id="validationCustom05" placeholder="Last Name" required>
+            <div class="valid-feedback">
+        Looks good!
+      </div>
         </div>
 
 
@@ -74,13 +90,16 @@
 <!--Third row-->
     <div class="form-row">
         <div class="form-group col-md-6">
-        <label for="inputCity">City</label>
-        <input type="text" class="form-control" id="inputCity">
+        <label for="validationCustom06">City</label>
+        <input type="text" class="form-control" id="validationCustom06" placeholder="City" required>
+        <div class="valid-feedback">
+        Looks good!
+      </div>
         </div>
         <div class="form-group col">
         <label for="inputState">State</label>
-        <select id="inputState" class="form-control">
-            <option selected>Pick a state</option>
+        <select class="custom-select" required>
+            <option value="">Pick a state</option>
             <option>Miami</option>
             <option>Los Angeles</option>
             <option>New york</option>
@@ -88,7 +107,7 @@
         </div>
         <div class="form-group col">
         <label for="inputZip">Postal</label>
-        <input type="text" class="form-control" id="inputZip">
+        <input type="text" class="form-control" id="inputZip" placeholder="Postal" required>
         </div>
     </div>
 
@@ -101,19 +120,19 @@
 
             <div>
                 <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option1">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option1" required>
                         <label class="form-check-label" for="inlineRadio1"><i class="fab fa-cc-mastercard"></i></label>
                         </div>
                 <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option2">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option2" required>
                         <label class="form-check-label" for="inlineRadio2"><i class="fab fa-cc-visa"></i></label>
                 </div>
                 <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option3">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option3" required>
                         <label class="form-check-label" for="inlineRadio3"><i class="fas fa-football-ball"></i></label>
                 </div>
                 <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option4">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option4" required>
                         <label class="form-check-label" for="inlineRadio4"><i class="fab fa-cc-diners-club"></i></label>
                     </div>
             </div>
@@ -142,6 +161,26 @@
 
 </form>
 
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
